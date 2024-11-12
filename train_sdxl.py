@@ -1275,6 +1275,8 @@ def main(args):
         # tensorboard cannot handle list types for config
         tracker_config.pop("validation_prompt")
         tracker_config.pop("validation_image")
+        tracker_config.pop("extra_lora_rank_modules")
+        tracker_config.pop("extra_lora_ranks")
 
         accelerator.init_trackers(args.tracker_project_name, config=tracker_config)
 
